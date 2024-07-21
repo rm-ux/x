@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I GOT THAT DAWG IN ME</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden; /* Ensure no scrollbar appears */
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Make sure particles are behind the content */
+        }
+        .container {
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px); /* Blurs the background behind the container */
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #0088cc;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #006699;
+            transform: scale(1.05);
+        }
+        .telegram-invite {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .telegram-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+        .telegram-image:hover {
+            transform: rotate(360deg);
+        }
+        .crypto-info {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .price-change {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .positive-change {
+            color: #00ff00;
+        }
+        .negative-change {
+            color: #ff0000;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #0088cc;
+        }
+        @media (max-width: 768px) {
+            .telegram-invite {
+                flex-direction: column;
+            }
+            .telegram-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <h1>I GOT THAT DAWG IN ME</h1>
+        <p>Stay updated with the latest trends and join our community.</p>
+        <div class="telegram-invite">
+            <img src="https://i.ibb.co/fF7G47q/IMG-20240720-123114-061.jpg" alt="Telegram Logo" class="telegram-image">
+            <a href="https://t.me/+hquCVhWpfZAyODJk" class="button">Join our Telegram</a>
+        </div>
+        <div id="price-tracker" class="crypto-info">Loading Solana price...</div>
+        <div id="price-change" class="price-change"></div>
+        <div class="social-links">
+            <h2>Follow IGTDIM</h2>
+            <a href="https://twitter.com/solana" target="_blank">Twitter</a>
+            <a href="https://www.reddit.com/r/solana/" target="_blank">Reddit</a>
+            <a href="https://github.com/solana-labs" target="_blank">GitHub</a>
+            <a href="https://www.instagram.com/_i_got_that_dawg_in_me_/" target="_blank">Instagram</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        // Initialize particles.js
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true,
+            "config_demo": {
+                "hide_card": false,
+                "background_color": "#b61924",
+                "background_image": "",
+                "background_position": "50% 50%",
+                "background_repeat": "no-repeat",
+                "background_size": "cover"
+            }
+        });
+
+        // Fetch Solana data from CoinGecko API
+        async function fetchSolanaData() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=solana');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                const solanaData = data[0];
+
+                const solanaPrice = solanaData.current_price;
+                const solanaChange = solanaData.price_change_percentage_24h.toFixed(2);
+
+                document.getElementById('price-tracker').textContent = `Solana price: $${solanaPrice}`;
+                const priceChangeElement = document.getElementById('price-change');
+                priceChangeElement.textContent = `24h change: ${solanaChange}%`;
+                if (solanaChange >= 0) {
+                    priceChangeElement.classList.add('positive-change');
+                    priceChangeElement.classList.remove('negative-change');
+                } else {
+                    priceChangeElement.classList.add('negative-change');
+                    priceChangeElement.classList.remove('positive-change');
+                }
+
+            } catch (error) {
+                console.error('Error fetching Solana data:', error);
+                document.getElementById('price-tracker').textContent = 'Error fetching price';
+                document.getElementById('price-change').textContent = '';
+            }
+        }
+
+        // Call the function when the page loads
+        window.addEventListener('load', fetchSolanaData);
+    </script>
+</body>
+</html>
