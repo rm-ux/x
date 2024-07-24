@@ -156,6 +156,7 @@
             margin: 10px; /* Add margin to create space between cards */
             width: 150px;
             text-align: center;
+            position: relative; /* Position relative for tooltip positioning */
             transition: transform 0.3s ease;
         }
 
@@ -175,10 +176,52 @@
             color: #0056b3;
         }
 
+        .tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position above the icon */
+            left: 50%;
+            margin-left: -60px; /* Center the tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .social-card:hover .tooltip {
+            visibility: visible;
+            opacity: 1; /* Show tooltip on hover */
+        }
+
         .loading {
             font-size: 1.5rem;
             font-weight: bold;
             margin-top: 20px;
+        }
+
+        /* Team Section Styles */
+        .team-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .team-member {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
         }
 
         @media (max-width: 768px) {
@@ -253,18 +296,66 @@
             <img src="https://i.ibb.co/fF7G47q/IMG-20240720-123114-061.jpg" alt="Telegram Logo" class="telegram-image">
             <a href="https://t.me/+hquCVhWpfZAyODJk" class="button">Join our Telegram</a>
         </div>
+        
         <div class="social-links">
             <h2>Follow IGTDIM</h2>
             <div class="social-card">
-                <a href="https://twitter.com/solana" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://twitter.com/solana" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    <span class="tooltip">Follow us on Twitter</span>
+                </a>
                 <p>Twitter</p>
             </div>
             <div class="social-card">
-                <a href="https://www.instagram.com/_i_got_that_dawg_in_me_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/_i_got_that_dawg_in_me_/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span class="tooltip">Follow us on Instagram</span>
+                </a>
                 <p>Instagram</p>
             </div>
         </div>
+
         <div class="loading" id="loading-message">Loading price data...</div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2>Meet the Team</h2>
+            <div class="team-member">
+                <img src="https://iili.io/dxVf6x9.jpg" alt="Shiya" />
+                <p>Shiya</p>
+                <p>Owner</p>
+            </div>
+            <div class="team-member">
+                <img src="https://iili.io/dxV3QlR.jpg" alt="Rmux" />
+                <p>Rmux</p>
+                <p>MOD/WEBSITE</p>
+            </div>
+            <div class="team-member">
+                <img src="https://iili.io/dxVqVgj.jpg" alt="Chief" />
+                <p>Chief</p>
+                <p>MOD</p>
+            </div>
+            <div class="team-member">
+                <img src="https://iili.io/dxVBfEu.jpg" alt="Cheekzonsol" />
+                <p>Cheekzonsol</p>
+                <p>MOD/FANPAGE</p>
+            </div>
+            <div class="team-member">
+                <img src="https://iili.io/dxV3CMJ.jpg" alt="Lucas" />
+                <p>Lucas</p>
+                <p>MOD</p>
+            </div>
+            <div class="team-member">
+                <img src="https://iili.io/dxVKqrv.md.jpg" alt="Daniel" />
+                <p>Daniel</p>
+                <p>MOD</p>
+            </div>
+            <div class="team-member">
+                <img src="https://iili.io/dxVfHFf.jpg" alt="Max_Shill" />
+                <p>Max_Shill</p>
+                <p>MOD</p>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
